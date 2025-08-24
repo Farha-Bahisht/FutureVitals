@@ -1,0 +1,74 @@
+:root{
+  --brand:#006D64;
+  --accent:#E63F89;
+  --container-max:1200px;   /* tune this if you want wider/narrower */
+  --container-pad:1rem;
+}
+
+/* Outer section: full width just for background spacing */
+.where-we-work-wrapper{
+  padding: clamp(24px,5vw,64px) 0;
+  overflow: visible;        /* no clipping needed */
+}
+
+/* Inner container: centered, "almost full width" */
+.where-we-work{
+  width: min(92vw, var(--container-max));
+  margin-inline: auto;
+  padding: 0 var(--container-pad) 2rem;
+  text-align: center;
+}
+
+/* Heading */
+.where-head h2{
+  font-size: clamp(1.75rem,2.8vw,2.25rem);
+  color: var(--brand);
+  margin: 0 0 .5rem;
+}
+.where-head p{
+  color:#666;
+  margin:0 0 1.25rem;
+}
+
+/* Map card — contained (NOT full-bleed) */
+.globe-container{
+  width: 100%;
+  margin: 0 auto;
+  background:#fff;
+  border-radius: 14px;
+  box-shadow: 0 12px 30px rgba(0,0,0,.08);
+  padding: clamp(8px,1.2vw,14px);
+  aspect-ratio: 16 / 9;             /* preferred: responsive */
+  overflow: hidden;
+}
+/* If your map is an SVG, keep it responsive */
+.globe-container svg{
+  width:100%;
+  height:100%;
+  display:block;
+  border-radius: 10px;
+}
+
+/* Info panel under map */
+.location-info{
+  margin: 1.25rem auto 0;
+  padding: clamp(14px,1.5vw,18px);
+  background:#f8f9fa;
+  border-radius:10px;
+  max-width: 720px; /* narrower for comfortable reading */
+}
+.location-info h3{
+  color:var(--brand);
+  margin:0 0 .4rem;
+}
+.location-info p{
+  color:#555;
+  line-height:1.6;
+  margin:0;
+}
+
+/* Small screens: soften paddings */
+@media (max-width: 520px){
+  .where-we-work{ padding: 0 .75rem 1.5rem; }
+  .globe-container{ border-radius: 10px; }
+}
