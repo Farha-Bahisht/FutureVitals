@@ -1,0 +1,66 @@
+:root{
+  --brand:#006D64;
+  --accent:#E63F89;
+  --container-max:1200px;
+  --container-pad:1rem;
+}
+
+/* Section spacing */
+.where-we-work-wrapper{
+  padding: clamp(24px,5vw,64px) 0;
+  overflow: visible;
+}
+
+/* Centered, almost-full-width container */
+.where-we-work{
+  width: min(92vw, var(--container-max));
+  margin-inline: auto;
+  padding: 0 var(--container-pad) 2rem;
+  text-align: center;
+}
+
+/* Heading */
+.where-head h2{
+  font-size: clamp(1.75rem,2.8vw,2.25rem);
+  color: var(--brand);
+  margin: 0 0 .5rem;
+}
+.where-head p{
+  color:#666;
+  margin:0 0 1.25rem;
+}
+
+/* Box that the map should sit inside (centered & capped) */
+.map-frame{
+  width: min(96%, 1100px);   /* good border margins */
+  margin: 0 auto;            /* center horizontally */
+  aspect-ratio: 16 / 9;      /* tidy, responsive box */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* react-simple-maps gives the SVG class="rsm-svg" */
+/* Make sure only the map SVG is affected and it stays centered inside the frame */
+.where-we-work .map-frame > svg.rsm-svg{
+  width: 100% !important;     /* fill the frame width */
+  max-width: 1100px;          /* nice border margins */
+  height: auto !important;
+  display: block;
+  margin-left: auto;          /* center horizontally */
+  margin-right: auto;
+  border-radius: 10px;
+}
+
+/* Optional: if the map lives inside your .globe-container card */
+.globe-container{
+  display: grid;
+  place-items: center;
+  border: 1px solid #e7edf1;
+  border-radius: 14px;
+  background: #fff;
+  box-shadow: 0 12px 30px rgba(0,0,0,.08);
+  padding: clamp(12px,1.6vw,20px);
+  aspect-ratio: 16 / 9;
+  overflow: hidden;
+}

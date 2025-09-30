@@ -1,0 +1,119 @@
+.about {
+    font-family: "Poppins", sans-serif;
+    color: #333;
+    line-height: 1.6;
+  }
+  
+  /* Mission */
+  .mission {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 60px 10%;
+    background: #fdf6f0;
+    gap: 40px;
+  }
+  
+  .mission-text {
+    flex: 1;
+  }
+  
+  .mission-text h2 {
+    font-size: 36px;
+    margin-bottom: 20px;
+    color: #222;
+  }
+  
+  .mission-text p {
+    margin-bottom: 20px;
+  }
+  
+  .mission-text button {
+    padding: 10px 20px;
+    border: none;
+    background: #000;
+    color: #fff;
+    font-size: 14px;
+    border-radius: 20px;
+    cursor: pointer;
+  }
+  
+  .mission-img {
+    flex: 1;
+  }
+  
+  .mission-img img {
+    width: 100%;
+    border-radius: 10px;
+  }
+  
+  /* Programs Section */
+  .programs {
+    padding: 60px 10%;
+  }
+  
+  .programs h2 {
+    text-align: center;
+    font-size: 30px;
+    margin-bottom: 50px;
+  }
+  
+  .program {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 60px;
+    gap: 30px;
+  }
+  
+  .program.reverse {
+    flex-direction: row-reverse;
+  }
+  
+  .program-text {
+    flex: 1;
+  }
+  
+  .program-text h3 {
+    font-size: 22px;
+    margin-bottom: 15px;
+  }
+  
+  .program-text p {
+    margin-bottom: 15px;
+  }
+  
+  .program-text button,
+  .program-text a {
+    display: inline-block;
+    padding: 8px 18px;
+    border: none;
+    background: #000;
+    color: #fff;
+    font-size: 14px;
+    border-radius: 18px;
+    text-decoration: none;
+    cursor: pointer;
+  }
+  
+  .program-img {
+    flex: 1;
+  }
+  
+  .program-img img {
+    width: 100%;
+    border-radius: 10px;
+  }
+  
+  /* Responsive */
+  @media(max-width: 900px) {
+    .mission,
+    .program {
+      flex-direction: column;
+      text-align: center;
+    }
+    .mission-text,
+    .program-text {
+      text-align: center;
+    }
+  }

@@ -1,0 +1,22 @@
+.blog-detail {
+  max-width: 800px;
+  margin: 2rem auto;
+  padding: 0 1rem;
+}
+
+.blog-detail-img {
+  max-width: 100%;
+  border-radius: 8px;
+  margin: 1rem 0;
+}
+
+.back-link {
+  display: inline-block;
+  margin-bottom: 1rem;
+  color: #006d64;
+  text-decoration: none;
+}
+
+.back-link:hover {
+  text-decoration: underline;
+}

@@ -1,0 +1,42 @@
+.newsletter {
+  margin: 2rem 0;
+  text-align: center;
+}
+
+.newsletter-form {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+}
+
+.newsletter-form input {
+  padding: 0.6rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  width: 250px;
+}
+
+.newsletter-form button {
+  background-color: #006d64;
+  color: white;
+  border: none;
+  padding: 0.6rem 1.2rem;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.newsletter-message {
+  margin-top: 0.5rem;
+  font-size: 0.9rem;
+}
+
+.unsubscribe {
+  margin-top: 0.5rem;
+  font-size: 0.75rem; /* smaller font */
+  color: gray;
+}
+.unsubscribe a {
+  color: gray;
+  text-decoration: underline;
+  cursor: pointer;
+}

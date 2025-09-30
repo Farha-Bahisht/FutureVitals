@@ -1,0 +1,72 @@
+.blog-admin-list {
+  max-width: 800px;
+  margin: 2rem auto;
+  padding: 1rem;
+}
+
+.blog-admin-list h1 {
+  text-align: center;
+  margin-bottom: 1.5rem;
+}
+
+.add-blog-btn {
+  display: inline-block;
+  margin-bottom: 1.5rem;
+  padding: 0.6rem 1.2rem;
+  background: #006d64;
+  color: white;
+  text-decoration: none;
+  border-radius: 5px;
+  font-weight: bold;
+}
+
+.add-blog-btn:hover {
+  background: #004f47;
+}
+
+.blog-admin-list ul {
+  list-style: none;
+  padding: 0;
+}
+
+.blog-admin-list li {
+  display: grid;
+  grid-template-columns: 1fr auto auto;
+  align-items: center;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  padding: 1rem;
+  margin-bottom: 1rem;
+  gap: 1rem;
+}
+
+.blog-admin-list h3 {
+  margin: 0;
+}
+
+.blog-admin-list a {
+  background: #006d64;
+  color: white;
+  padding: 0.5rem 1rem;
+  border-radius: 5px;
+  text-decoration: none;
+  font-weight: bold;
+  text-align: center;
+}
+
+.blog-admin-list a:hover {
+  background: #004f47;
+}
+
+.blog-admin-list button {
+  background: #e63946;
+  border: none;
+  padding: 0.5rem 1rem;
+  color: white;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.blog-admin-list button:hover {
+  background: #c53030;
+}
