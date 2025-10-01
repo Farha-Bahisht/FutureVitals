@@ -1,191 +1,179 @@
-/* Full-width hero */
-.hero {
-    position: relative;
-    min-height: clamp(360px, 55vh, 640px);   /* responsive height */
-    background-image: url("../assets/Hero.png");
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    display: grid;
-    place-items: center;
-    isolation: isolate; /* keeps overlay layering sane */
-  }
-  
-  /* Dark overlay for contrast */
-  .hero-overlay {
-    position: absolute;
-    inset: 0;
-    background: linear-gradient(
-      to bottom,
-      rgba(0,0,0,.45),
-      rgba(0,0,0,.35)
-    );
-    z-index: 0;
-  }
-  
-  /* Centered text */
-  .hero-content {
-    position: relative;
-    z-index: 1;
-    text-align: center;
-    color: #fff;
-    padding: 0 1rem;
-    max-width: 960px;
-  }
-  
-  .hero-content h1 {
-    margin: 0 0 .5rem;
-    font-size: clamp(1.75rem, 3.5vw, 3rem);
-    font-weight: 800;
-    letter-spacing: .2px;
-  }
-  
-  .hero-content p {
-    margin: 0 0 1rem;
-    font-size: clamp(1rem, 1.6vw, 1.25rem);
-    opacity: .95;
-  }
-  
-  /* CTA reuses brand colors */
-  .hero-cta {
-    display: inline-flex;
-    align-items: center;
-    gap: .25rem;
-    background: #E63F89;      /* your Donate pink */
-    color: #fff;
-    text-decoration: none;
-    padding: .6rem 1rem;
-    border-radius: 6px;
-    font-weight: 800;
-  }
-  .hero-cta:hover { filter: brightness(1.05); }
-  
-  /* Optional spacing for following sections */
-  .page-section { padding: 3rem 1rem; }
-  
-  /* -------- existing hero styles above -------- */
+/* ---------------- PAGE BACKGROUND ---------------- */
+.page-background {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #006D64 0%, #4ba0c8 50%, #e4c6bd 100%);
+  display: flex;
+  flex-direction: column;
+  color: #fff;
+}
 
-/* TAB that sits right under the hero */
+/* ---------------- HERO SECTION ---------------- */
+/* ---------------- HERO SECTION ---------------- */
+.hero {
+  position: relative;
+  min-height: clamp(360px, 55vh, 640px);
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 6rem 2rem 2rem; /* added top padding so it's not under navbar */
+}
+
+
+.hero-content {
+  max-width: 700px;
+  flex: 1 1 50%;
+}
+
+.hero-content h1 {
+  margin: 0 0 1rem;
+  font-size: clamp(2rem, 4vw, 3.5rem);
+  font-weight: 800;
+  line-height: 1.2;
+}
+
+.hero-content p {
+  font-size: clamp(1rem, 1.6vw, 1.25rem);
+  opacity: .9;
+}
+
+.hero-illustration {
+  flex: 1 1 40%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.hero-illustration img {
+  max-width: 400px;
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+  object-position: center;
+  display: block;
+}
+
+/* ---------------- NAVBAR BLENDING ---------------- */
+header, .navbar {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background: transparent;
+  z-index: 10;
+  box-shadow: none;
+}
+
+header a, .navbar a {
+  color: #fff;
+  font-weight: 600;
+  text-decoration: none;
+  padding: 0.5rem 1rem;
+  transition: color 0.2s ease;
+}
+
+header a:hover, .navbar a:hover {
+  color: #ffb6c1; /* pink accent */
+}
+
+/* ---------------- HERO TAB ---------------- */
 .hero-tab-wrap {
-    position: relative;
-    background: #f4f4f4;             /* subtle band like WWF */
-    padding-top: 56px;                /* room for the overlapping card */
-    padding-bottom: 32px;
-  }
-  
-  .hero-tab {
-    max-width: 1000px;
-    margin: -72px auto 0;             /* pull card up to overlap hero */
-    background: #ffffff;
-    border-radius: 12px;
-    box-shadow: 0 8px 24px rgba(0,0,0,.12);
-    padding: 28px 32px;
-    border-left: 6px solid #006D64;   /* brand green accent */
-  }
-  
-  .hero-tab h2 {
-    margin: 0 0 .5rem;
-    font-size: clamp(1.4rem, 2.4vw, 2rem);
-    font-weight: 800;
-    letter-spacing: .2px;
-  }
-  
-  .hero-tab h2::after {               /* small chevron like screenshot */
-    content: "›";
-    margin-left: .4rem;
-    color: #E63F89;                    /* your pink accent */
-    font-weight: 900;
-  }
-  
-  .hero-tab p {
-    margin: 0;
-    color: #333;
-    font-size: clamp(.95rem, 1.4vw, 1.125rem);
-    line-height: 1.5;
-  }
-  
-  /* Optional: keep card readable on tiny screens */
-  @media (max-width: 520px) {
-    .hero-tab { padding: 20px; border-left-width: 4px; }
-  }
-  
-  /* Impact section: two-column layout */
+  padding: 2rem;
+  text-align: center;
+}
+
+.hero-tab {
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+/* ---------------- IMPACT / CHALLENGE SECTION ---------------- */
 .impact {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: clamp(24px, 4vw, 48px);
-    align-items: center;
-    padding: clamp(28px, 6vw, 64px) 1rem;
-    max-width: 1200px;
-    margin: 0 auto;
-  }
-  
-  /* Left side */
-  .impact-content {
-    color: #0b1b1a;
-  }
-  .impact-title {
-    margin: 0 0 .75rem;
-    font-size: clamp(1.6rem, 2.8vw, 2.125rem);
-    font-weight: 900;
-  }
-  .impact-lede {
-    margin: 0 0 1.5rem;
-    font-size: clamp(1rem, 1.5vw, 1.125rem);
-    line-height: 1.6;
-  }
-  .pill {
-    background: #E63F89;
-    color: #fff;
-    padding: .2rem .45rem;
-    border-radius: 6px;
-    font-weight: 800;
-    margin-right: .35rem;
-  }
-  
-  /* Stats list (no icons/logos) */
-  .impact-stats {
-    list-style: none;
-    margin: 0 0 1.5rem;
-    padding: 0;
-    display: grid;
-    gap: 1rem;
-  }
-  .impact-stats li h3 {
-    margin: 0;
-    font-size: 1rem;
-    font-weight: 700;
-  }
-  .impact-stats li p {
-    margin: .25rem 0 0;
-    font-size: .95rem;
-    color: #374246;
-  }
-  
-  /* Link */
-  .impact-link {
-    font-weight: 700;
-    text-decoration: none;
-    color: #006D64;
-  }
-  .impact-link:hover { text-decoration: underline; }
-  
-  /* Right side */
-  .impact-media img {
-    width: 100%;
-    border-radius: 10px;
-    object-fit: cover;
-    aspect-ratio: 4/3;
-    box-shadow: 0 10px 30px rgba(0,0,0,.12);
-  }
-  
-  /* Mobile: stack vertically */
-  @media (max-width: 900px) {
-    .impact {
-      grid-template-columns: 1fr;
-    }
-    .impact-media {
-      order: -1; /* image on top for mobile */
-    }
-  }
-  
+  display: flex;
+  flex-wrap: nowrap;   /* keep side-by-side */
+  align-items: flex-start;
+  justify-content: space-between;
+  padding: 3rem 2rem;
+  gap: 2rem;
+}
+
+.impact-content {
+  flex: 1 1 55%;
+  max-width: 650px;
+}
+
+.impact-title {
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+}
+
+.impact-lede {
+  font-size: 1.125rem;
+  margin-bottom: 1.5rem;
+}
+
+.impact-stats {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 1.5rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1rem;
+}
+
+.impact-stats li {
+  background: rgba(255, 255, 255, 0.1);
+  padding: 1rem;
+  border-radius: 8px;
+}
+
+.impact-link {
+  color: #fff;
+  font-weight: bold;
+  text-decoration: underline;
+}
+
+.impact-media {
+  flex: 1 1 40%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.impact-media img {
+  max-width: 320px;
+  width: 100%;
+  border-radius: 8px;
+}
+
+/* ---------------- WHERE WE WORK ---------------- */
+.where-we-work {
+  text-align: center;
+  padding: 3rem 2rem;
+}
+
+.where-we-work h2 {
+  margin-bottom: 1rem;
+  font-size: 2rem;
+  font-weight: 700;
+}
+
+.map-wrap {
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+.map-wrap iframe,
+.map-wrap img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 8px;
+}
+
+/* ---------------- SECTIONS ---------------- */
+.page-section {
+  padding: 3rem 2rem;
+  text-align: center;
+}

@@ -1,0 +1,108 @@
+.getinvolved {
+  font-family: "Poppins", sans-serif;
+  color: #fff;
+  text-align: center;
+  padding: 100px 5% 60px;
+  background: linear-gradient(135deg, #006d64 0%, #4ba0c8 50%, #e4c6bd 100%);
+  min-height: 100vh;
+}
+
+.getinvolved-title {
+  font-size: 2.5rem;
+  font-weight: 800;
+  margin-bottom: 0.5rem;
+}
+
+.getinvolved-subtitle {
+  font-size: 1.1rem;
+  margin-bottom: 2.5rem;
+  opacity: 0.9;
+}
+
+/* ---------------- GRID ---------------- */
+.getinvolved-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 1.5rem;
+}
+
+/* ---------------- CARDS ---------------- */
+.getinvolved-card {
+  background: rgba(255, 255, 255, 0.08);
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.getinvolved-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.25);
+}
+
+.getinvolved-card img {
+  width: 100%;
+  height: 180px;   /* smaller image height */
+  object-fit: cover;
+}
+
+.getinvolved-card-content {
+  padding: 1rem;   /* less padding */
+  text-align: left;
+}
+
+.getinvolved-card-content h3 {
+  font-size: 1.3rem;  /* smaller heading */
+  margin-bottom: 0.5rem;
+  color: #fff;
+}
+
+.getinvolved-card-content p {
+  font-size: 0.95rem; /* smaller text */
+  margin-bottom: 0.75rem;
+  color: #f9f9f9;
+  opacity: 0.95;
+  line-height: 1.4;
+}
+
+/* ---------------- BUTTONS ---------------- */
+.getinvolved-btn {
+  display: inline-block;
+  padding: 8px 16px;  /* smaller button */
+  background: #ffb6c1;
+  color: #333;
+  font-weight: 600;
+  border-radius: 8px;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  font-size: 0.9rem;
+}
+
+.getinvolved-btn:hover {
+  background: #ff9eb0;
+  color: #fff;
+}
+
+/* ---------------- FORM SECTION ---------------- */
+.form-section {
+  margin-top: 3rem;
+  padding: 2rem;
+  background: rgba(255, 255, 255, 0.12);
+  border-radius: 12px;
+  text-align: center;
+  max-width: 700px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.form-section h3 {
+  font-size: 1.8rem;
+  margin-bottom: 0.5rem;
+}
+
+.form-section p {
+  margin-bottom: 1rem;
+  opacity: 0.9;
+}

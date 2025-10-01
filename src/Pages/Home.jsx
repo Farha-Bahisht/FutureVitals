@@ -12,77 +12,71 @@ const stats = [
 
 const Home = () => {
   return (
-    <>
-      <main>
-        {/* HERO */}
-        <section
-          className="hero"
-          role="img"
-          aria-label="FutureVitals: advancing health equity"
-        >
-          <div className="hero-overlay" />
-          <div className="hero-content">{/* optional text on image */}</div>
-        </section>
+    <main className="page-background">
+      {/* HERO */}
+      <section className="hero">
+        <div className="hero-content">
+          <h1>FutureVitals</h1>
+          <p>The pulse of health equity.</p>
+        </div>
+        <div className="hero-illustration">
+          <img src="/assets/hero-illustration.png" alt="Healthcare illustration" />
+        </div>
+      </section>
 
-        {/* TAB under hero */}
-        <section className="hero-tab-wrap">
-          <div className="hero-tab">
-            <h2>Whatever you want to say</h2>
-            <p>FutureVitals and partners align to support people and ecosystems.</p>
-          </div>
-        </section>
+      {/* TAB */}
+      <section className="hero-tab-wrap">
+        <div className="hero-tab">
+          <h2>Whatever you want to say</h2>
+          <p>FutureVitals and partners align to support people and ecosystems.</p>
+        </div>
+      </section>
 
-        {/* STATS LEFT / IMAGE RIGHT */}
-        <section className="impact">
-          <div className="impact-content">
-            <h2 className="impact-title">The Challenge</h2>
-            <p className="impact-lede">
-              <strong className="pill">1 in 5 people</strong> face barriers to
-              timely, equitable care. FutureVitals tracks the gaps and moves
-              resources where they matter most.
-            </p>
+      {/* STATS / CHALLENGE */}
+      <section className="impact">
+        <div className="impact-content">
+          <h2 className="impact-title">The Challenge</h2>
+          <p className="impact-lede">
+            <strong className="pill">1 in 5 people</strong> face barriers to
+            timely, equitable care. FutureVitals tracks the gaps and moves
+            resources where they matter most.
+          </p>
+          <ul className="impact-stats">
+            {stats.map(({ title, copy }) => (
+              <li key={title}>
+                <h3>{title}</h3>
+                <p>{copy}</p>
+              </li>
+            ))}
+          </ul>
+          <a className="impact-link" href="#learn">
+            Learn more →
+          </a>
+        </div>
 
-            <ul className="impact-stats">
-              {stats.map(({ title, copy }) => (
-                <li key={title}>
-                  <h3>{title}</h3>
-                  <p>{copy}</p>
-                </li>
-              ))}
-            </ul>
+        <figure className="impact-media">
+          <img
+            src="/assets/Stats.jpg"
+            alt="Healthcare statistics and impact data"
+          />
+        </figure>
+      </section>
 
-            <a className="impact-link" href="#learn">
-              Learn more →
-            </a>
-          </div>
+      {/* WHERE WE WORK */}
+      <section className="page-section where-we-work">
+        <h2>Where We Work</h2>
+        <div className="map-wrap">
+          <WhereWeWork />
+        </div>
+      </section>
 
-          <figure className="impact-media">
-            <img
-              src="/assets/Stats.jpg"
-              alt="Healthcare statistics and impact data"
-              style={{
-                width: '100%',
-                height: 'auto',
-                maxWidth: '600px',
-                borderRadius: '10px',
-                boxShadow: '0 4px 8px rgba(0,0,0,0.1)'
-              }}
-            />
-          </figure>
-
-          <section className="page-section">
-  <WhereWeWork />
-  <section className="page-section">
-    <h2>Stay Updated</h2>
-    <p>Sign up for our newsletter to receive updates and news.</p>
-    <NewsletterForm />
-  </section>
-
-</section>
-        </section>
-      </main>
-    </>
-
+      {/* NEWSLETTER */}
+      <section className="page-section">
+        <h2>Stay Updated</h2>
+        <p>Sign up for our newsletter to receive updates and news.</p>
+        <NewsletterForm />
+      </section>
+    </main>
   );
 };
 

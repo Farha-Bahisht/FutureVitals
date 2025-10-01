@@ -55,53 +55,42 @@ export default function AboutUs() {
             <img src="/images/science-blog.jpg" alt="Science Blog" />
           </div>
         </div>
+        </section>
+        
+        {/* Who We Are Section */}
+<section className="team">
+  <h2>Who We Are</h2>
+  <p className="team-intro">
+    Meet the passionate individuals behind FutureVitals, dedicated to advancing STEM, mentorship, and community outreach.
+  </p>
 
-        <div className="program">
-          <div className="program-text">
-            <h3>STEM Spotlight Series</h3>
-            <p>
-              Discover the world of STEM through inspiring interviews with
-              professionals in various fields. Our video series highlights
-              pathways, challenges, and career insights for students.
-            </p>
-            <a href="https://youtube.com" target="_blank" rel="noreferrer">
-              Watch on YouTube
-            </a>
-          </div>
-          <div className="program-img">
-            <img src="/images/stem-spotlight.jpg" alt="STEM Spotlight" />
-          </div>
-        </div>
+  <div className="team-cards">
+    {/* Example team member */}
+    <div className="team-card">
+      <img src="/images/team1.jpg" alt="Team Member" />
+      <h3>Jane Doe</h3>
+      <p>Founder & Director</p>
+      <p className="quote">"Passionate about empowering youth in STEM."</p>
+    </div>
 
-        <div className="program reverse">
-          <div className="program-text">
-            <h3>Journal Club</h3>
-            <p>
-              Our Journal Club empowers students to engage with current
-              scientific literature and improve their critical thinking skills.
-              Together, members explore and discuss research papers in a
-              collaborative setting.
-            </p>
-          </div>
-          <div className="program-img">
-            <img src="/images/journal-club.jpg" alt="Journal Club" />
-          </div>
-        </div>
+    <div className="team-card">
+      <img src="/images/team2.jpg" alt="Team Member" />
+      <h3>John Smith</h3>
+      <p>Program Coordinator</p>
+      <p className="quote">"Creating opportunities through mentorship."</p>
+    </div>
 
-        <div className="program">
-          <div className="program-text">
-            <h3>Community Outreach</h3>
-            <p>
-              Omnisci STEM fosters outreach initiatives that bring STEM
-              education into schools and communities, creating access and
-              opportunities for the next generation of scientists.
-            </p>
-          </div>
-          <div className="program-img">
-            <img src="/images/community-outreach.jpg" alt="Community Outreach" />
-          </div>
-        </div>
-      </section>
+    <div className="team-card">
+      <img src="/images/team3.jpg" alt="Team Member" />
+      <h3>Emily Brown</h3>
+      <p>Science Communicator</p>
+      <p className="quote">"Making science accessible for all."</p>
+    </div>
+
+    {/* Add more cards as needed */}
+  </div>
+</section>
+
     </div>
   );
 }

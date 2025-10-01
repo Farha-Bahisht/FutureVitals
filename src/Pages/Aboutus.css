@@ -1,119 +1,221 @@
 .about {
-    font-family: "Poppins", sans-serif;
-    color: #333;
-    line-height: 1.6;
-  }
-  
-  /* Mission */
-  .mission {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 60px 10%;
-    background: #fdf6f0;
-    gap: 40px;
-  }
-  
-  .mission-text {
-    flex: 1;
-  }
-  
-  .mission-text h2 {
-    font-size: 36px;
-    margin-bottom: 20px;
-    color: #222;
-  }
-  
-  .mission-text p {
-    margin-bottom: 20px;
-  }
-  
-  .mission-text button {
-    padding: 10px 20px;
-    border: none;
-    background: #000;
-    color: #fff;
-    font-size: 14px;
-    border-radius: 20px;
-    cursor: pointer;
-  }
-  
-  .mission-img {
-    flex: 1;
-  }
-  
-  .mission-img img {
-    width: 100%;
-    border-radius: 10px;
-  }
-  
-  /* Programs Section */
-  .programs {
-    padding: 60px 10%;
-  }
-  
-  .programs h2 {
-    text-align: center;
-    font-size: 30px;
-    margin-bottom: 50px;
-  }
-  
+  font-family: "Poppins", sans-serif;
+  color: #fff;
+  line-height: 1.6;
+  background: linear-gradient(135deg, #006D64 0%, #4ba0c8 50%, #e4c6bd 100%);
+  min-height: 100vh;
+
+  /* FIX: push content below header */
+  padding-top: 100px; /* adjust depending on your navbar height */
+}
+
+/* Mission */
+.mission {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 60px 10%;
+  gap: 40px;
+}
+
+
+.mission-text {
+  flex: 1;
+}
+
+.mission-text h2 {
+  font-size: 36px;
+  margin-bottom: 20px;
+  color: #fff; /* consistent */
+}
+
+.mission-text p {
+  margin-bottom: 20px;
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.mission-text button {
+  padding: 10px 20px;
+  border: none;
+  background: #ffb6c1; /* pink accent */
+  color: #333;
+  font-size: 14px;
+  border-radius: 20px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.mission-text button:hover {
+  background: #e4c6bd;
+  color: #000;
+}
+
+.mission-img {
+  flex: 1;
+}
+
+.mission-img img {
+  width: 100%;
+  border-radius: 10px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.25);
+}
+
+/* Programs Section */
+.programs {
+  padding: 60px 10%;
+}
+
+.programs h2 {
+  text-align: center;
+  font-size: 30px;
+  margin-bottom: 50px;
+  color: #fff;
+}
+
+.program {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 60px;
+  gap: 30px;
+}
+
+.program.reverse {
+  flex-direction: row-reverse;
+}
+
+.program-text {
+  flex: 1;
+}
+
+.program-text h3 {
+  font-size: 22px;
+  margin-bottom: 15px;
+  color: #fff;
+}
+
+.program-text p {
+  margin-bottom: 15px;
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.program-text button,
+.program-text a {
+  display: inline-block;
+  padding: 8px 18px;
+  border: none;
+  background: #ffb6c1; /* pink accent */
+  color: #333;
+  font-size: 14px;
+  border-radius: 18px;
+  text-decoration: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.program-text button:hover,
+.program-text a:hover {
+  background: #e4c6bd;
+  color: #000;
+}
+
+.program-img {
+  flex: 1;
+}
+
+.program-img img {
+  width: 100%;
+  border-radius: 10px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.25);
+}
+
+/* Who We Are Section */
+.team {
+  padding: 60px 10%;
+  text-align: center;
+}
+
+.team h2 {
+  font-size: 32px;
+  margin-bottom: 10px;
+  color: #fff;
+}
+
+.team-intro {
+  font-size: 16px;
+  color: rgba(255, 255, 255, 0.9);
+  margin-bottom: 40px;
+}
+
+/* Scrollable Row */
+.team-cards {
+  display: flex;
+  gap: 20px;
+  overflow-x: auto;
+  padding-bottom: 10px;
+  scrollbar-width: thin; /* Firefox */
+  scrollbar-color: #ffb6c1 transparent;
+}
+
+.team-cards::-webkit-scrollbar {
+  height: 8px;
+}
+
+.team-cards::-webkit-scrollbar-thumb {
+  background: #ffb6c1;
+  border-radius: 10px;
+}
+
+.team-card {
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 12px;
+  padding: 20px;
+  min-width: 250px;
+  flex: 0 0 auto;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+  transition: transform 0.3s ease;
+}
+
+.team-card:hover {
+  transform: translateY(-5px);
+}
+
+.team-card img {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  margin-bottom: 15px;
+  object-fit: cover;
+}
+
+.team-card h3 {
+  font-size: 18px;
+  margin-bottom: 5px;
+  color: #fff;
+}
+
+.team-card p {
+  font-size: 14px;
+  margin: 3px 0;
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.team-card .quote {
+  font-style: italic;
+  font-size: 13px;
+  opacity: 0.85;
+}
+
+
+/* Responsive */
+@media (max-width: 900px) {
+  .mission,
   .program {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    margin-bottom: 60px;
-    gap: 30px;
+    flex-direction: column;
+    text-align: center;
   }
-  
-  .program.reverse {
-    flex-direction: row-reverse;
-  }
-  
+  .mission-text,
   .program-text {
-    flex: 1;
+    text-align: center;
   }
-  
-  .program-text h3 {
-    font-size: 22px;
-    margin-bottom: 15px;
-  }
-  
-  .program-text p {
-    margin-bottom: 15px;
-  }
-  
-  .program-text button,
-  .program-text a {
-    display: inline-block;
-    padding: 8px 18px;
-    border: none;
-    background: #000;
-    color: #fff;
-    font-size: 14px;
-    border-radius: 18px;
-    text-decoration: none;
-    cursor: pointer;
-  }
-  
-  .program-img {
-    flex: 1;
-  }
-  
-  .program-img img {
-    width: 100%;
-    border-radius: 10px;
-  }
-  
-  /* Responsive */
-  @media(max-width: 900px) {
-    .mission,
-    .program {
-      flex-direction: column;
-      text-align: center;
-    }
-    .mission-text,
-    .program-text {
-      text-align: center;
-    }
-  }
+}

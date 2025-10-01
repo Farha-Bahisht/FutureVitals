@@ -21,26 +21,35 @@ export const Blog = () => {
     fetchBlogs();
   }, []);
 
-  if (loading) return <p>Loading blogs...</p>;
+  if (loading) return <p className="loading">Loading blogs...</p>;
 
   return (
-    <div className="blog-list">
-      <h1>Our Blog</h1>
+    <div className="blog-page">
+      <h1 className="blog-title">Our Blog</h1>
+
       {blogs.length === 0 ? (
-        <p>No blog posts yet.</p>
+        <p className="no-blogs">No blog posts yet.</p>
       ) : (
-        blogs.map((blog) => (
-          <div className="blog-card" key={blog._id}>
-            {blog.imageUrl && (
-              <img src={blog.imageUrl} alt={blog.title} className="blog-img" />
-            )}
-            <h2>{blog.title}</h2>
-            <p>{blog.content.substring(0, 150)}...</p>
-            <Link to={`/blog/${blog._id}`} className="read-more">
-              Read More →
-            </Link>
-          </div>
-        ))
+        <div className="blog-grid">
+          {blogs.map((blog) => (
+            <div className="blog-card" key={blog._id}>
+              {blog.imageUrl && (
+                <img src={blog.imageUrl} alt={blog.title} className="blog-img" />
+              )}
+              <div className="blog-content">
+                <h2>{blog.title}</h2>
+                <p className="blog-meta">
+                  {new Date(blog.createdAt).toLocaleDateString()} •{" "}
+                  {Math.ceil(blog.content.split(" ").length / 200)} min read
+                </p>
+                <p>{blog.content.substring(0, 150)}...</p>
+                <Link to={`/blog/${blog._id}`} className="read-more">
+                  Read More →
+                </Link>
+              </div>
+            </div>
+          ))}
+        </div>
       )}
     </div>
   );
