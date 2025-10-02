@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import "./BlogAdmin.css";
 import { Link } from "react-router-dom";
 
-export const BlogAdmin = () => {
+export default function BlogAdmin() {
   const [title, setTitle] = useState("");
   const [content, setContent] = useState("");
   const [image, setImage] = useState(null);

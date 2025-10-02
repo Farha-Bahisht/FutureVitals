@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import "./BlogAdminList.css";
 
-export const BlogAdminList = () => {
+export default function BlogAdminList() {
   const [blogs, setBlogs] = useState([]);
   const [loading, setLoading] = useState(true);
 

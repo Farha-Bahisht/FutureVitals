@@ -10,7 +10,7 @@ const stats = [
   { title: "Clinic Reach", copy: "116K outside 30-min radius" },
 ];
 
-const Home = () => {
+export default function Home() {
   return (
     <main className="page-background">
       {/* HERO */}

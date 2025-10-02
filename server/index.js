@@ -11,6 +11,15 @@ app.use(cors({ origin: ['http://localhost:3000'] }));
 app.use(express.json());
 app.use(morgan('dev'));
 
+// admin route
+const adminRoutes = require("./routes/admin"); // add this
+app.use(express.json()); // if you don't already have this, add it
+app.use("/api/admin", adminRoutes); // add this
+
+// admin about us
+const aboutRoutes = require("./routes/aboutus");
+app.use("/api/aboutus", aboutRoutes);
+
 // newsletter route
 const newsletterRoutes = require('./routes/newsletter');
 app.use('/api/newsletter', newsletterRoutes);
