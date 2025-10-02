@@ -1,14 +1,14 @@
-// server/routes/about.js
 const express = require("express");
 const router = express.Router();
 const About = require("../models/Aboutus");
 
-// GET /api/about → public, returns current about content
+// GET /api/aboutus
 router.get("/", async (req, res) => {
   try {
     let about = await About.findOne();
     if (!about) {
-      return res.json({ content: "" });
+      about = new About(); // create empty structure if not found
+      await about.save();
     }
     res.json(about);
   } catch (err) {
@@ -16,16 +16,15 @@ router.get("/", async (req, res) => {
   }
 });
 
-// PUT /api/about → update content (for admin only)
-// for now, no JWT — just allow if logged in frontend handles it
+// PUT /api/aboutus
 router.put("/", async (req, res) => {
   try {
-    const { content } = req.body;
+    const update = req.body; // will have mission, programs, team
     let about = await About.findOne();
     if (!about) {
-      about = new About({ content });
+      about = new About(update);
     } else {
-      about.content = content;
+      Object.assign(about, update);
     }
     await about.save();
     res.json({ success: true, about });
@@ -35,3 +34,15 @@ router.put("/", async (req, res) => {
 });
 
 module.exports = router;
+
+
+const upload = require("../middleware/upload");
+
+router.post("/upload", upload.single("image"), (req, res) => {
+  try {
+    // multer + cloudinary automatically attaches the URL at req.file.path
+    res.json({ success: true, url: req.file.path });
+  } catch (err) {
+    res.status(500).json({ success: false, error: err.message });
+  }
+});
