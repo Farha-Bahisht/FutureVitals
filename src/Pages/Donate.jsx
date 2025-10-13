@@ -4,9 +4,7 @@ import "./Donate.css";
 export default function Donate() {
   const [openIndex, setOpenIndex] = useState(null);
 
-  const toggleFAQ = (index) => {
-    setOpenIndex(openIndex === index ? null : index);
-  };
+ 
 
   return (
     <div className="donate-page">

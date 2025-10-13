@@ -108,7 +108,7 @@ export default function Home() {
               </li>
             ))}
           </ul>
-          <a className="impact-link" href="#learn">
+          <a className="impact-link" href= "https://docs.google.com/forms/d/e/1FAIpQLSf1uojvpb8uofP4a67JQaSmE1nb4xTqz-B-k7Oq0wCYpwtoFQ/viewform?usp=header">
             Learn more →
           </a>
         </div>

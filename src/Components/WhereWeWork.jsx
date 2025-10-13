@@ -18,9 +18,9 @@ const OHIO = "39";
 const HIGHLIGHT_COLOR = "#3BAFA3"; // same for VA, TX, OH
 const LAND_COLOR = "#D6DBDF";
 const BORDER_COLOR = "#FFFFFF";
-const STAR_COLOR = "#E63F89"; // pink star
+// const STAR_COLOR = "#E63F89"; // pink star  ❌ commented out (unused)
 
-const EXCLUDE = new Set(["02", "15", "60", "66", "69", "72", "78"]); // AK, HI, territories
+// const EXCLUDE = new Set(["02", "15", "60", "66", "69", "72", "78"]); // AK, HI, territories ❌ commented out (unused)
 
 // Coordinates for the Virginia star
 const VIRGINIA_COORDS = [-78.6569, 37.4316];
@@ -46,7 +46,6 @@ export default function WhereWeWorkMap() {
               geographies.map((geo) => {
                 const id = String(geo.id);
 
-                // determine fill
                 let fillColor = LAND_COLOR;
                 if (id === VIRGINIA || id === TEXAS || id === OHIO) {
                   fillColor = HIGHLIGHT_COLOR;
