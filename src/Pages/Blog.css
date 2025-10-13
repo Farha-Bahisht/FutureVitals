@@ -2,77 +2,98 @@
 .blog-page {
   font-family: "Poppins", sans-serif;
   min-height: 100vh;
-  padding: 100px 5% 60px;
-  background: linear-gradient(135deg, #006d64 0%, #4ba0c8 50%, #e4c6bd 100%);
-  color: #fff;
+  background: #ffffff;
+  color: #333;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-bottom: 60px;
+}
+
+/* ---------------- HEADER IMAGE ---------------- */
+.blog-header {
+  width: 100%;
+  height: 300px; /* Adjust as needed */
+  background-image: url('/Users/farhabahisht/FutureVitals/src/assets2/blogHero.png'); /* replace with your header image URL */
+  background-size: cover;
+  background-position: center;
+  margin-bottom: 40px;
+}
+
+/* ---------------- BLOG TITLE ---------------- */
+.blog-title {
+  font-size: 2rem;
+  font-weight: 800;
+  margin-bottom: 2rem;
+  color: #222;
   text-align: center;
 }
 
-.blog-title {
-  font-size: 2.5rem;
-  font-weight: 800;
-  margin-bottom: 2rem;
-}
-
-/* ---------------- GRID ---------------- */
-.blog-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-  gap: 2rem;
-  max-width: 1100px;
+/* ---------------- LIST ---------------- */
+.blog-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem; /* small gap between cards */
+  max-width: 680px; /* ✅ narrower layout */
+  width: 100%;
   margin: 0 auto;
+  padding: 0 15px; /* small side padding for mobile */
 }
 
 /* ---------------- CARD ---------------- */
 .blog-card {
-  background: #fff;
-  color: #333;
-  border-radius: 12px;
-  overflow: hidden;
-  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.15);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
   display: flex;
-  flex-direction: column;
-  text-align: left;
+  flex-direction: row;
+  background: #fff;
+  border: 1px solid #e0e0e0;
+  border-radius: 6px;
+  overflow: hidden;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
 }
 
 .blog-card:hover {
-  transform: translateY(-6px);
-  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.25);
+  border-color: #d0d0d0;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.04);
 }
 
 .blog-img {
-  width: 100%;
-  height: 200px;
+  flex: 0 0 200px; /* smaller horizontal image */
+  height: 140px;
   object-fit: cover;
 }
 
 .blog-content {
-  padding: 1.5rem;
-}
-
-.blog-content h2 {
-  margin: 0 0 0.5rem;
-  font-size: 1.5rem;
-  font-weight: 700;
+  flex: 1;
+  padding: 1.2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 .blog-meta {
-  font-size: 0.9rem;
+  font-size: 0.85rem;
   color: #777;
-  margin-bottom: 0.75rem;
+  margin-bottom: 0.4rem;
+}
+
+.blog-content h2 {
+  font-size: 1rem;
+  font-weight: 700;
+  margin: 0 0 0.4rem;
+  color: #222;
 }
 
 .blog-content p {
-  font-size: 1rem;
-  line-height: 1.5;
-  margin-bottom: 1rem;
+  font-size: 0.9rem;
+  color: #555;
+  line-height: 1.4;
+  margin-bottom: 0.6rem;
 }
 
 /* ---------------- LINK ---------------- */
 .read-more {
-  display: inline-block;
   font-weight: 600;
+  font-size: 0.9rem;
   color: #006d64;
   text-decoration: none;
   transition: color 0.2s ease;
@@ -82,10 +103,18 @@
   color: #ff9eb0;
 }
 
-/* ---------------- STATES ---------------- */
-.loading,
-.no-blogs {
-  font-size: 1.2rem;
-  margin-top: 2rem;
-  opacity: 0.9;
+/* ---------------- RESPONSIVE ---------------- */
+@media (max-width: 700px) {
+  .blog-card {
+    flex-direction: column;
+  }
+
+  .blog-img {
+    width: 100%;
+    height: 200px;
+  }
+
+  .blog-content {
+    padding: 1rem;
+  }
 }

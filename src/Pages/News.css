@@ -1,0 +1,17 @@
+/* ============================= */
+/* NEWS PAGE */
+/* ============================= */
+.news-page {
+  font-family: "Poppins", sans-serif;
+  background: #ffffff; /* White background */
+  color: #333;
+  min-height: 100vh;
+  text-align: center;
+  padding-top: 120px; /* pushes content below navbar */
+}
+
+.news-content h1 {
+  font-size: 2.5rem;
+  font-weight: 800;
+  margin: 0;
+}

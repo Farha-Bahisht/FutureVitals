@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
+import heroImage from "../assets2/blogHero.png";  // ✅ Correct relative import
 import "./Blog.css";
 
 export default function Blog() {
@@ -25,23 +26,35 @@ export default function Blog() {
 
   return (
     <div className="blog-page">
+      {/* ✅ Hero Image */}
+      <div
+        className="blog-header"
+        style={{
+          backgroundImage: `url(${heroImage})`,
+        }}
+      ></div>
+
       <h1 className="blog-title">Our Blog</h1>
 
       {blogs.length === 0 ? (
         <p className="no-blogs">No blog posts yet.</p>
       ) : (
-        <div className="blog-grid">
+        <div className="blog-list">
           {blogs.map((blog) => (
             <div className="blog-card" key={blog._id}>
               {blog.imageUrl && (
-                <img src={blog.imageUrl} alt={blog.title} className="blog-img" />
+                <img
+                  src={blog.imageUrl}
+                  alt={blog.title}
+                  className="blog-img"
+                />
               )}
               <div className="blog-content">
-                <h2>{blog.title}</h2>
-                <p className="blog-meta">
+                <div className="blog-meta">
                   {new Date(blog.createdAt).toLocaleDateString()} •{" "}
                   {Math.ceil(blog.content.split(" ").length / 200)} min read
-                </p>
+                </div>
+                <h2>{blog.title}</h2>
                 <p>{blog.content.substring(0, 150)}...</p>
                 <Link to={`/blog/${blog._id}`} className="read-more">
                   Read More →
@@ -53,4 +66,4 @@ export default function Blog() {
       )}
     </div>
   );
-};
+}

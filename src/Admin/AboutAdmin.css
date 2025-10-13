@@ -1,129 +1,154 @@
-/* Full-page wrapper */
+/* Overall page */
 .about-admin {
   min-height: 100vh;
   width: 100%;
-  padding: 40px;
-  font-family: 'Segoe UI', sans-serif;
-  background: linear-gradient(135deg, #1fa2ff, #12d8fa, #a6ffcb);
-  color: #fff;
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 40px 20px;
+  font-family: "Segoe UI", sans-serif;
+  background: #fafafa;
+  color: #333;
+  line-height: 1.5;
 }
 
 /* Main heading */
 .about-admin h2 {
   text-align: center;
+  font-size: 24px;
+  font-weight: 600;
   margin-bottom: 40px;
-  font-size: 30px;
-  font-weight: 700;
-  color: #fff;
+  color: #222;
 }
 
-/* Section titles */
+/* Section headers */
 .about-admin h3 {
+  font-size: 18px;
+  font-weight: 600;
   margin-top: 30px;
-  margin-bottom: 20px;
-  font-size: 22px;
-  color: #fff;
-  border-bottom: 2px solid rgba(255, 255, 255, 0.4);
+  margin-bottom: 15px;
+  color: #444;
+  border-bottom: 1px solid #e5e5e5;
   padding-bottom: 6px;
 }
 
-/* Individual card container */
+/* Each section wrapper */
 .form-section {
-  margin-bottom: 30px;
-  padding: 20px;
-  border-radius: 14px;
-  background: rgba(255, 255, 255, 0.15);
-  backdrop-filter: blur(8px);
-  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+  margin-bottom: 35px;
 }
 
 /* Labels */
 .form-section label {
   display: block;
-  font-weight: bold;
-  margin-top: 10px;
-  margin-bottom: 5px;
-  color: #fff;
+  font-size: 14px;
+  margin-top: 15px;
+  margin-bottom: 6px;
+  color: #555;
+  font-weight: 500;
 }
 
 /* Inputs and textareas */
 .form-section input,
 .form-section textarea {
   width: 100%;
-  padding: 12px 14px;
-  margin-bottom: 15px;
-  border: none;
-  border-radius: 8px;
-  font-size: 15px;
-  outline: none;
-  background: rgba(255, 255, 255, 0.9);
+  padding: 8px 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 14px;
+  background: #fff;
   color: #333;
-  transition: box-shadow 0.2s ease;
+  transition: border-color 0.2s ease;
 }
 
 .form-section input:focus,
 .form-section textarea:focus {
-  box-shadow: 0 0 0 3px rgba(31, 162, 255, 0.5);
+  border-color: #007bff;
+  outline: none;
 }
 
 .form-section textarea {
   resize: vertical;
-  min-height: 100px;
+  min-height: 80px;
 }
 
 /* File input */
 input[type="file"] {
-  background: rgba(255, 255, 255, 0.95);
-  padding: 10px;
-  border-radius: 8px;
+  padding: 6px;
+  background: #fff;
+  border: 1px solid #ccc;
   cursor: pointer;
-  font-size: 14px;
 }
 
-/* Buttons */
-button {
-  background: #ff6f61;
-  color: white;
-  border: none;
-  padding: 10px 18px;
-  border-radius: 8px;
+/* Program & Team item title */
+.item-title {
   font-size: 15px;
+  font-weight: 600;
+  margin: 20px 0 10px;
+  color: #333;
+}
+
+/* Buttons - clean, not loud */
+button {
+  background: #007bff;
+  color: #fff;
+  border: none;
+  padding: 8px 14px;
+  border-radius: 4px;
+  font-size: 14px;
   cursor: pointer;
-  transition: all 0.25s ease-in-out;
+  transition: background 0.2s ease;
 }
 
 button:hover {
-  background: #ff3d2e;
-  transform: scale(1.05);
+  background: #0056b3;
 }
 
 /* Add button */
 .add-btn {
-  background: #00c851;
-  margin-top: 12px;
+  background: #28a745;
+  margin-top: 10px;
 }
 
 .add-btn:hover {
-  background: #009432;
+  background: #1e7e34;
 }
 
-/* Save button */
+/* Save button - centered and slightly larger */
 .save-btn {
   display: block;
-  margin: 35px auto 0 auto;
+  margin: 40px auto 0;
   background: #ff9800;
-  font-size: 17px;
-  padding: 12px 24px;
+  padding: 10px 20px;
+  font-size: 15px;
 }
 
 .save-btn:hover {
   background: #e68900;
 }
 
-/* Numbered headings for Programs & Team */
-.item-title {
-  font-size: 18px;
-  font-weight: bold;
+/* 🗑️ Delete button */
+.delete-btn {
+  background: #dc3545;
   color: #fff;
-  margin-bottom: 10px;
+  border: none;
+  padding: 6px 12px;
+  border-radius: 4px;
+  font-size: 13px;
+  margin-top: 8px;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.delete-btn:hover {
+  background: #b02a37;
+}
+
+/* 👤 Team & Program Images - make them square */
+.team-member img,
+.program-item img {
+  width: 150px;
+  height: 150px;
+  object-fit: cover;
+  border-radius: 8px; /* or 0 for perfect square */
+  display: block;
+  margin: 10px 0;
 }

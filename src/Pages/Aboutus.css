@@ -1,75 +1,181 @@
+/* ==================================== */
+/* GLOBAL ABOUT PAGE STYLES */
+/* ==================================== */
 .about {
   font-family: "Poppins", sans-serif;
-  color: #fff;
+  color: #333;
   line-height: 1.6;
-  background: linear-gradient(135deg, #006D64 0%, #4ba0c8 50%, #e4c6bd 100%);
+  background: #ffffff;
   min-height: 100vh;
-
-  /* FIX: push content below header */
-  padding-top: 100px; /* adjust depending on your navbar height */
+  padding-top: 0px; /* push content below header */
 }
 
-/* Mission */
-.mission {
+/* ==================================== */
+/* WHO WE ARE SECTION (HERO) */
+/* ==================================== */
+/* WHO WE ARE SECTION (HERO) */
+.who-we-are {
+  position: relative;
   display: flex;
+  flex-wrap: wrap;
   align-items: center;
   justify-content: space-between;
-  padding: 60px 10%;
-  gap: 40px;
+  background: #b5d7d5;
+  padding: 4rem 10% 0; /* bottom padding removed to let wave sit tight */
+  overflow: hidden;
 }
 
-
-.mission-text {
+.who-text {
   flex: 1;
+  max-width: 450px;
+  z-index: 2;
 }
 
-.mission-text h2 {
-  font-size: 36px;
-  margin-bottom: 20px;
-  color: #fff; /* consistent */
-}
-
-.mission-text p {
-  margin-bottom: 20px;
-  color: rgba(255, 255, 255, 0.9);
-}
-
-.mission-text button {
-  padding: 10px 20px;
-  border: none;
-  background: #ffb6c1; /* pink accent */
-  color: #333;
-  font-size: 14px;
-  border-radius: 20px;
-  cursor: pointer;
-  transition: all 0.3s ease;
-}
-
-.mission-text button:hover {
-  background: #e4c6bd;
+.who-text h2 {
+  font-size: 2rem;
+  font-weight: 800;
+  margin-bottom: 0.5rem;
   color: #000;
 }
 
-.mission-img {
+.who-text p {
+  font-size: 1rem;
+  line-height: 1.5;
+  opacity: 0.9;
+  color: #333;
+}
+
+.who-illustration {
   flex: 1;
+  display: flex;
+  justify-content: center;
+  z-index: 2;
 }
 
-.mission-img img {
+.who-illustration img {
+  max-width: 350px;
   width: 100%;
-  border-radius: 10px;
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.25);
+  height: auto;
 }
 
-/* Programs Section */
+/* 🌊 Wave Styles */
+.wave {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  line-height: 0;
+  z-index: 1;
+}
+
+.wave svg {
+  display: block;
+  width: 100%;
+  height: 100px;
+}
+
+.wave path {
+  animation: waveMove 5s ease-in-out infinite alternate;
+}
+
+@keyframes waveMove {
+  0% {
+    transform: translateX(0) translateY(0);
+  }
+  50% {
+    transform: translateX(-150px) translateY(8px);
+  }
+  100% {
+    transform: translateX(0) translateY(0);
+  }
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  .who-we-are {
+    flex-direction: column;
+    text-align: center;
+  }
+  .who-text {
+    max-width: 100%;
+    margin-bottom: 1.5rem;
+  }
+}
+
+/* ==================================== */
+/* MISSION & VISION SECTION */
+/* ==================================== */
+.mission-vision {
+  text-align: center;
+  padding: 3rem 10%;
+  
+  
+}
+
+.mission-vision h2 {
+  font-size: 1.8rem;
+  font-weight: 800;
+  color: #FFB9C6; /* pink title */
+  margin-bottom: 0.3rem;
+}
+
+.mission-vision .subtitle {
+  font-size: 1.1rem;
+  color: #B5D7D5; /* teal accent */
+  font-weight: 600;
+  margin-bottom: 2rem;
+}
+
+.mv-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5rem;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.mv-card {
+  background: #ffffff;
+  border-top: 4px solid #FFB9C6;
+  border-radius: 8px;
+  padding: 1.2rem 1rem;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+  text-align: left;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.mv-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+}
+
+.mv-card h3 {
+  font-size: 1.1rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+  color: #000;
+}
+
+.mv-card p {
+  font-size: 0.95rem;
+  line-height: 1.4;
+  color: #444;
+  opacity: 0.9;
+}
+
+/* ==================================== */
+/* PROGRAMS SECTION */
+/* ==================================== */
 .programs {
   padding: 60px 10%;
+  background: #ffffff;
 }
 
 .programs h2 {
   text-align: center;
   font-size: 30px;
   margin-bottom: 50px;
-  color: #fff;
+  color: #333;
 }
 
 .program {
@@ -91,12 +197,12 @@
 .program-text h3 {
   font-size: 22px;
   margin-bottom: 15px;
-  color: #fff;
+  color: #333;
 }
 
 .program-text p {
   margin-bottom: 15px;
-  color: rgba(255, 255, 255, 0.9);
+  color: #555;
 }
 
 .program-text button,
@@ -104,7 +210,7 @@
   display: inline-block;
   padding: 8px 18px;
   border: none;
-  background: #ffb6c1; /* pink accent */
+  background: #FFB9C6;
   color: #333;
   font-size: 14px;
   border-radius: 18px;
@@ -115,7 +221,7 @@
 
 .program-text button:hover,
 .program-text a:hover {
-  background: #e4c6bd;
+  background: #FBCFDD;
   color: #000;
 }
 
@@ -126,95 +232,15 @@
 .program-img img {
   width: 100%;
   border-radius: 10px;
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.25);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
 }
-
-/* Who We Are Section */
-.team {
-  padding: 60px 10%;
-  text-align: center;
-}
-
-.team h2 {
-  font-size: 32px;
-  margin-bottom: 10px;
-  color: #fff;
-}
-
-.team-intro {
-  font-size: 16px;
-  color: rgba(255, 255, 255, 0.9);
-  margin-bottom: 40px;
-}
-
-/* Scrollable Row */
-.team-cards {
-  display: flex;
-  gap: 20px;
-  overflow-x: auto;
-  padding-bottom: 10px;
-  scrollbar-width: thin; /* Firefox */
-  scrollbar-color: #ffb6c1 transparent;
-}
-
-.team-cards::-webkit-scrollbar {
-  height: 8px;
-}
-
-.team-cards::-webkit-scrollbar-thumb {
-  background: #ffb6c1;
-  border-radius: 10px;
-}
-
-.team-card {
-  background: rgba(255, 255, 255, 0.1);
-  border-radius: 12px;
-  padding: 20px;
-  min-width: 250px;
-  flex: 0 0 auto;
-  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
-  transition: transform 0.3s ease;
-}
-
-.team-card:hover {
-  transform: translateY(-5px);
-}
-
-.team-card img {
-  width: 100px;
-  height: 100px;
-  border-radius: 50%;
-  margin-bottom: 15px;
-  object-fit: cover;
-}
-
-.team-card h3 {
-  font-size: 18px;
-  margin-bottom: 5px;
-  color: #fff;
-}
-
-.team-card p {
-  font-size: 14px;
-  margin: 3px 0;
-  color: rgba(255, 255, 255, 0.9);
-}
-
-.team-card .quote {
-  font-style: italic;
-  font-size: 13px;
-  opacity: 0.85;
-}
-
 
 /* Responsive */
 @media (max-width: 900px) {
-  .mission,
   .program {
     flex-direction: column;
     text-align: center;
   }
-  .mission-text,
   .program-text {
     text-align: center;
   }

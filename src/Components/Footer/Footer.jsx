@@ -1,6 +1,6 @@
 import React from "react";
 import "./Footer.css";
-import { FaInstagram, FaYoutube, FaTiktok } from "react-icons/fa";
+import { FaInstagram, FaYoutube, FaLinkedin } from "react-icons/fa";
 
 export default function Footer() {
   return (
@@ -26,12 +26,12 @@ export default function Footer() {
         </a>
 
         <a 
-          href="https://www.tiktok.com/@futurevitals" 
+          href="https://www.LinkedIn.com/@futurevitals" 
           target="_blank" 
           rel="noreferrer"
-          aria-label="TikTok"
+          aria-label="LinkedIn"
         >
-          <FaTiktok />
+          <FaLinkedin />
         </a>
       </div>
     </footer>

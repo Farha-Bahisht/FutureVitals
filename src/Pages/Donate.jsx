@@ -39,40 +39,10 @@ export default function Donate() {
         </div>
       </section>
 
-      {/* FAQ Section */}
-      <section className="faq">
-        <h2>Frequently Asked Questions</h2>
-        <p className="faq-intro">
-          We know that donating to FutureVitals may bring up some questions.
-          Below you can find answers to the most common ones.
-        </p>
+      
 
-        <div className="faq-grid">
-          <div
-            className={`faq-card ${openIndex === 0 ? "open" : ""}`}
-            onClick={() => toggleFAQ(0)}
-          >
-            <h3>01. Can I earmark a donation?</h3>
-            <p>
-              Yes. You can specify exactly where you’d like your donation
-              to go under our programs. Please add a comment when making a donation.
-            </p>
-          </div>
-
-          <div
-            className={`faq-card ${openIndex === 1 ? "open" : ""}`}
-            onClick={() => toggleFAQ(1)}
-          >
-            <h3>02. How do I sponsor?</h3>
-            <p>
-              Sponsorships are always welcome! FutureVitals has several
-              levels of sponsorship and would love to hear your ideas.
-              Please contact us at{" "}
-              <a href="mailto:Futurevitals.info@gmail.com">Futurevitals.info@gmail.com</a>.
-            </p>
-          </div>
-        </div>
-      </section>
+        
+     
     </div>
   );
 }

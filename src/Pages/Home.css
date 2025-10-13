@@ -1,100 +1,245 @@
 /* ---------------- PAGE BACKGROUND ---------------- */
 .page-background {
   min-height: 100vh;
-  background: linear-gradient(135deg, #006D64 0%, #4ba0c8 50%, #e4c6bd 100%);
+  background: #ffffff;
   display: flex;
   flex-direction: column;
-  color: #fff;
+  color: #333;
 }
 
-/* ---------------- HERO SECTION ---------------- */
-/* ---------------- HERO SECTION ---------------- */
-.hero {
+
+
+/* ---------------- HERO IMAGE ---------------- */
+.home-hero {
+  width: 100%;
+  height: 60vh; /* or whatever height you want */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
   position: relative;
-  min-height: clamp(360px, 55vh, 640px);
+  margin-top: 0px; /* ✅ pushes hero below the sticky navbar */
+}
+
+.hero-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.4); /* translucent dark overlay */
   display: flex;
-  flex-wrap: wrap;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
   text-align: center;
-  padding: 6rem 2rem 2rem; /* added top padding so it's not under navbar */
+  color: #fff;
+  padding: 0 1rem;
 }
 
-
-.hero-content {
-  max-width: 700px;
-  flex: 1 1 50%;
-}
-
-.hero-content h1 {
-  margin: 0 0 1rem;
-  font-size: clamp(2rem, 4vw, 3.5rem);
+.hero-overlay h1 {
+  font-size: clamp(2rem, 5vw, 4rem);
   font-weight: 800;
-  line-height: 1.2;
+  margin-bottom: 0.5rem;
 }
 
-.hero-content p {
-  font-size: clamp(1rem, 1.6vw, 1.25rem);
-  opacity: .9;
+.hero-overlay p {
+  font-size: clamp(1rem, 1.5vw, 1.25rem);
+  margin: 0;
 }
 
-.hero-illustration {
+
+
+
+
+/* ============================= */
+/* WHO WE ARE SECTION */
+/* ============================= */
+.who-we-are-section {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;         /* 🧼 removed 4rem auto */
+  padding: 0 2rem;        /* horizontal only */
+  flex-wrap: wrap;
+}
+
+.who-we-are-box {
+  background: #FBCFDD; /* soft pink background */
+  padding: 2.5rem;
+  flex: 1 1 50%;
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.who-text {
+  max-width: 500px;
+  border-left: 3px solid #ffffff;
+  padding-left: 1rem;
+}
+
+.who-text h2 {
+  font-size: 2rem;
+  font-weight: 800;
+  margin-bottom: 1rem;
+  color: #222;
+}
+
+.who-text p {
+  font-size: 1rem;
+  color: #333;
+  line-height: 1.6;
+}
+
+.who-image {
   flex: 1 1 40%;
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
-.hero-illustration img {
-  max-width: 400px;
+.who-image img {
+  max-width: 350px;
   width: 100%;
   height: auto;
   object-fit: contain;
-  object-position: center;
-  display: block;
 }
 
-/* ---------------- NAVBAR BLENDING ---------------- */
-header, .navbar {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  background: transparent;
-  z-index: 10;
-  box-shadow: none;
+/* Responsive */
+@media (max-width: 768px) {
+  .who-we-are-section {
+    flex-direction: column;
+  }
+
+  .who-we-are-box {
+    width: 100%;
+    text-align: left;
+  }
+
+  .who-image img {
+    margin-top: 1.5rem;
+    max-width: 300px;
+  }
 }
 
-header a, .navbar a {
-  color: #fff;
-  font-weight: 600;
-  text-decoration: none;
-  padding: 0.5rem 1rem;
-  transition: color 0.2s ease;
-}
 
-header a:hover, .navbar a:hover {
-  color: #ffb6c1; /* pink accent */
-}
 
-/* ---------------- HERO TAB ---------------- */
-.hero-tab-wrap {
-  padding: 2rem;
+/* ---------------- WHAT WE DO ---------------- */
+.what-we-do {
   text-align: center;
+  background: #ffffff;
+  padding: 0 2rem; /* 🧼 removed vertical padding */
 }
 
-.hero-tab {
-  max-width: 700px;
+.what-we-do h2 {
+  font-size: 2.2rem;
+  font-weight: 700;
+  color: #006d64;
+  margin-bottom: 0.5rem;
+}
+
+.what-we-do .subtitle {
+  font-size: 1.1rem;
+  color: #666;
+  margin-bottom: 2.5rem;
+}
+
+/* Grid Layout */
+.what-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+  max-width: 1100px;
   margin: 0 auto;
 }
+
+/* Card */
+.what-card {
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  border-radius: 10px;
+  background: #ffffff;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  height: 100%;
+}
+
+.what-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.15);
+}
+
+/* ✅ Make all images uniform */
+.what-card img {
+  width: 100%;
+  height: 220px;
+  object-fit: contain;
+  background: #ffffff;
+  padding: 1rem;
+  display: block;
+  box-sizing: border-box;
+}
+
+
+/* Text Blocks */
+.what-card-text {
+  padding: 1.2rem;
+  color: #333;
+}
+
+.what-card-text h3 {
+  font-size: 0.9rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+}
+
+.what-card-text p {
+  font-size: 0.95rem;
+  line-height: 1.5;
+  margin: 0;
+}
+
+/* Themed backgrounds for the 3 cards */
+.what-card:nth-child(1) .what-card-text {
+  background: #B5D7D5;
+}
+
+.what-card:nth-child(2) .what-card-text {
+  background: #FBCFDD;
+}
+
+.what-card:nth-child(3) .what-card-text {
+  background: #B5D7D5;
+}
+
+/* Responsive tweaks */
+@media (max-width: 600px) {
+  .what-we-do {
+    padding: 0 1rem; /* 🧼 removed vertical spacing */
+  }
+
+  .what-card img {
+    height: 180px;
+  }
+
+  .what-card-text h3 {
+    font-size: 1rem;
+  }
+}
+
+
 
 /* ---------------- IMPACT / CHALLENGE SECTION ---------------- */
 .impact {
   display: flex;
-  flex-wrap: nowrap;   /* keep side-by-side */
+  flex-wrap: nowrap;
   align-items: flex-start;
   justify-content: space-between;
-  padding: 3rem 2rem;
+  padding: 0 2rem; /* 🧼 removed 3rem vertical */
   gap: 2rem;
 }
 
@@ -107,11 +252,13 @@ header a:hover, .navbar a:hover {
   font-size: 2rem;
   font-weight: 700;
   margin-bottom: 1rem;
+  color: #006d64;
 }
 
 .impact-lede {
   font-size: 1.125rem;
   margin-bottom: 1.5rem;
+  color: #555;
 }
 
 .impact-stats {
@@ -124,13 +271,14 @@ header a:hover, .navbar a:hover {
 }
 
 .impact-stats li {
-  background: rgba(255, 255, 255, 0.1);
+  background: #f7f7f7;
   padding: 1rem;
   border-radius: 8px;
+  color: #333;
 }
 
 .impact-link {
-  color: #fff;
+  color: #006d64;
   font-weight: bold;
   text-decoration: underline;
 }
@@ -148,32 +296,208 @@ header a:hover, .navbar a:hover {
   border-radius: 8px;
 }
 
+
+
 /* ---------------- WHERE WE WORK ---------------- */
-.where-we-work {
-  text-align: center;
-  padding: 3rem 2rem;
-}
+.where-we-work { text-align: center; 
+  padding: 3rem 2rem; 
+  background: #fff;
+ } 
+  .where-we-work h2 {
+     margin-bottom: 1rem; 
+     font-size: 2rem;
+      font-weight: 700;
+       color: #006d64;
+       } 
+       
+       .map-wrap {
+         max-width: 700px;
+          margin: 0 auto;
+         } 
+    .map-wrap iframe,
+     .map-wrap img {
+       max-width: 100%; height: auto; 
+       border-radius: 8px; }
 
-.where-we-work h2 {
-  margin-bottom: 1rem;
-  font-size: 2rem;
-  font-weight: 700;
-}
 
-.map-wrap {
-  max-width: 700px;
-  margin: 0 auto;
-}
-
-.map-wrap iframe,
-.map-wrap img {
-  max-width: 100%;
-  height: auto;
-  border-radius: 8px;
-}
 
 /* ---------------- SECTIONS ---------------- */
 .page-section {
-  padding: 3rem 2rem;
+  padding: 0 2rem; /* 🧼 only horizontal now */
   text-align: center;
+  background: #fff;
+  color: #333;
 }
+
+
+
+/* ---------------- RESPONSIVE ---------------- */
+@media (max-width: 800px) {
+  .who-we-are {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .who-img img {
+    max-width: 300px;
+    margin-top: 1rem;
+  }
+
+  .impact {
+    flex-direction: column;
+  }
+
+  .impact-media img {
+    max-width: 100%;
+  }
+  
+}
+
+
+
+/* ============================= */
+/* NEWSLETTER SECTION (MEDIUM 450PX) */
+/* ============================= */
+.newsletter-section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #ffffff;
+  padding: 0 1rem; /* 🧼 removed vertical padding */
+}
+
+.newsletter-blob {
+  position: relative;
+  background: #fff5f5;
+  padding: 1.8rem 1.4rem;
+  max-width: 450px;
+  text-align: center;
+  border-radius: 50% 50% 45% 55% / 55% 45% 50% 50%;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+}
+
+.newsletter-title {
+  font-size: 1.5rem;
+  font-weight: 800;
+  color: #f4515c;
+  margin-bottom: 0.7rem;
+}
+
+.newsletter-text {
+  font-size: 0.9rem;
+  color: #333;
+  line-height: 1.5;
+  margin-bottom: 1.2rem;
+  max-width: 380px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.newsletter-btn {
+  display: inline-block;
+  padding: 0.45rem 1.2rem;
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: #f4515c;
+  text-decoration: none;
+  border: 2px solid #f4515c;
+  border-radius: 50px;
+  transition: all 0.3s ease;
+  background: transparent;
+}
+
+.newsletter-btn:hover {
+  background: #f4515c;
+  color: #fff;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(244, 81, 92, 0.3);
+}
+
+/* Decorative shapes */
+.newsletter-blob::before,
+.newsletter-blob::after {
+  content: "";
+  position: absolute;
+  border-radius: 50%;
+}
+
+.newsletter-blob::before {
+  width: 35px;
+  height: 25px;
+  background: #2a868e;
+  top: -18px;
+  left: 14%;
+  transform: rotate(-20deg);
+}
+
+.newsletter-blob::after {
+  width: 42px;
+  height: 28px;
+  background: #FBCFDD;
+  top: -14px;
+  right: 12%;
+  transform: rotate(15deg);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .newsletter-blob {
+    max-width: 90%;
+    padding: 1.5rem 1rem;
+  }
+
+  .newsletter-title {
+    font-size: 1.3rem;
+  }
+
+  .newsletter-text {
+    font-size: 0.85rem;
+  }
+
+  .newsletter-btn {
+    font-size: 0.85rem;
+    padding: 0.4rem 1rem;
+  }
+}
+
+
+
+/* ============================= */
+/* 🌟 GLOBAL SECTION SPACING (Best Practice) */
+/* ============================= */
+.home-hero,
+.who-we-are-section,
+.what-we-do,
+.impact,
+.where-we-work,
+.newsletter-section {
+  padding-top: 60px;
+  padding-bottom: 60px;
+  margin: 0 auto;
+}
+
+.home-hero + .who-we-are-section,
+.who-we-are-section + .what-we-do,
+.what-we-do + .impact,
+.impact + .where-we-work,
+.where-we-work + .newsletter-section {
+  margin-top: 0;
+  padding-top: 60px;
+}
+
+@media (max-width: 768px) {
+  .home-hero,
+  .who-we-are-section,
+  .what-we-do,
+  .impact,
+  .where-we-work,
+  .newsletter-section {
+    padding-top: 40px;
+    padding-bottom: 40px;
+  }
+}
+
+
+/* ============================= */
+/* GLOBAL TYPOGRAPHY ALIGNMENT */
+/* ============================= */

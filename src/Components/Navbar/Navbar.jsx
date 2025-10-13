@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 
 const Navbar = () => {
   const [scrolled, setScrolled] = useState(false);
+  const [dropdownOpen, setDropdownOpen] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -19,30 +20,43 @@ const Navbar = () => {
         {/* Logo */}
         <Link to="/" className="logo">
           <img
-            src="/assets/logo1.png"
+            src="/assets/logo.png"
             alt="Future Vitals"
             className="brand-logo"
           />
         </Link>
 
-        {/* Links */}
+        {/* Nav Links */}
         <nav>
           <ul className="nav-links">
             <li><Link to="/about">About Us</Link></li>
             <li><Link to="/get-involved">Get Involved</Link></li>
             <li><Link to="/blog">Blog</Link></li>
+            <li><Link to="/team">Team</Link></li>
+            <li><Link to="/news">News/Events</Link></li>
+
+            {/* Dropdown Menu */}
+            <li
+              className="dropdown"
+              onMouseEnter={() => setDropdownOpen(true)}
+              onMouseLeave={() => setDropdownOpen(false)}
+            >
+              <span className="dropdown-toggle">Our Chapters ▾</span>
+              {dropdownOpen && (
+                <ul className="dropdown-menu">
+                  <li><Link to="/chapters/va">Future Vitals VA Chapter</Link></li>
+                  <li><Link to="/chapters/tx">Future Vitals TX Chapter</Link></li>
+                  {/* ✅ Add more chapters here later */}
+                </ul>
+              )}
+            </li>
           </ul>
         </nav>
-
-        {/* Actions */}
+        {/* Donate Button */}
         <div className="actions">
           <Link to="/donate" className="donate">
             Donate +
           </Link>
-          <Link to="" className="">
-            ....
-          </Link>
-          
         </div>
       </div>
     </header>
