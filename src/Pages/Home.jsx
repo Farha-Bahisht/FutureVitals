@@ -1,11 +1,15 @@
 import React from "react";
 import "./Home.css";
-import heroImg from "/Users/farhabahisht/FutureVitals/src/assets2/homebanner.png"; // ✅ your hero image
-import whoWeAreImg from "/Users/farhabahisht/FutureVitals/src/assets2/whoweare.png"; // ✅ illustration or relevant image
-import healthImg from "/Users/farhabahisht/FutureVitals/src/assets2/health.jpg";
-import mentalImg from "/Users/farhabahisht/FutureVitals/src/assets2/mental.png";
-import educationImg from "/Users/farhabahisht/FutureVitals/src/assets2/education.png";
-import WhereWeWork from "/Users/farhabahisht/FutureVitals/src/Components/WhereWeWork.jsx"; // ✅ make sure this path matches your project
+
+// Images - correct relative paths
+import heroImg from "../assets2/homebanner.png";
+import whoWeAreImg from "../assets2/whoweare.png";
+import healthImg from "../assets2/health.jpg";
+import mentalImg from "../assets2/mental.png";
+import educationImg from "../assets2/education.png";
+
+// Components - correct relative paths
+import WhereWeWork from "../Components/WhereWeWork.jsx";
 
 
 // ✅ Example stats array (if not already imported)
