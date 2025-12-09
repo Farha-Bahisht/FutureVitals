@@ -1,47 +1,70 @@
 .getinvolved {
-  font-family: "Poppins", sans-serif;
-  color: #006d64; /* teal for main text */
   text-align: center;
-  padding: 100px 5% 60px;
-  background: #ffffff; /* white background */
-  min-height: 100vh;
+  padding-bottom: 3rem;
 }
 
-.getinvolved-title {
-  font-size: 2.5rem;
-  font-weight: 800;
-  margin-bottom: 0.5rem;
-  color: #006d64; /* teal */
-}
-
-.getinvolved-subtitle {
-  font-size: 1.1rem;
-  margin-bottom: 2.5rem;
-  opacity: 0.9;
-  color: #4ba0c8; /* light teal for subtitle */
-}
-
-/* ---------------- GRID ---------------- */
-.getinvolved-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-  gap: 1.5rem;
-}
-
-/* ---------------- CARDS ---------------- */
-.getinvolved-card {
-  background: rgba(0, 109, 100, 0.05); /* light teal tint */
-  border-radius: 12px;
+/* 🌟 Banner */
+.getinvolved-banner {
+  position: relative;
+  width: 100%;
+  height: 350px;
   overflow: hidden;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.getinvolved-banner img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.banner-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
   display: flex;
   flex-direction: column;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  justify-content: center;
+  align-items: center;
+  background: rgba(0, 0, 0, 0.45);
+  color: white;
+  text-align: center;
+}
+
+.banner-overlay h1 {
+  font-size: 2.5rem;
+  margin: 0;
+}
+
+.banner-overlay p {
+  font-size: 1.2rem;
+  margin-top: 0.5rem;
+}
+
+/* 🧭 Cards Grid */
+.getinvolved-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+  padding: 3rem 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.getinvolved-card {
+  background: #fff;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+  transition: transform 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
 .getinvolved-card:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.15);
+  transform: translateY(-5px);
 }
 
 .getinvolved-card img {
@@ -51,62 +74,46 @@
 }
 
 .getinvolved-card-content {
-  padding: 1rem;
-  text-align: left;
+  padding: 1.5rem;
 }
 
 .getinvolved-card-content h3 {
-  font-size: 1.3rem;
   margin-bottom: 0.5rem;
-  color: #006d64; /* teal */
+  font-size: 1.2rem;
 }
 
 .getinvolved-card-content p {
   font-size: 0.95rem;
-  margin-bottom: 0.75rem;
-  color: #333;
-  opacity: 0.85;
-  line-height: 1.4;
+  margin-bottom: 1rem;
+  color: #444;
 }
 
-/* ---------------- BUTTONS ---------------- */
 .getinvolved-btn {
-  display: inline-block;
-  padding: 8px 16px;
-  background: #ffb6c1; /* pink */
-  color: #333;
-  font-weight: 600;
-  border-radius: 8px;
+  background: #f78da7;
+  color: #fff;
+  padding: 0.6rem 1.2rem;
   text-decoration: none;
-  transition: all 0.3s ease;
-  font-size: 0.9rem;
+  border-radius: 25px;
+  display: inline-block;
+  font-weight: 500;
+  transition: background 0.3s ease;
 }
 
 .getinvolved-btn:hover {
-  background: #ff9eb0; /* darker pink on hover */
-  color: #fff;
+  background: #e2728e;
 }
 
-/* ---------------- FORM SECTION ---------------- */
+/* 📌 Form Section */
 .form-section {
-  margin-top: 3rem;
-  padding: 2rem;
-  background: rgba(0, 109, 100, 0.05); /* light teal background */
-  border-radius: 12px;
-  text-align: center;
-  max-width: 700px;
-  margin-left: auto;
-  margin-right: auto;
+  background: #f9f9f9;
+  padding: 2.5rem 1.5rem;
+  border-top: 1px solid #eee;
 }
 
 .form-section h3 {
-  font-size: 1.8rem;
   margin-bottom: 0.5rem;
-  color: #006d64;
 }
 
 .form-section p {
   margin-bottom: 1rem;
-  opacity: 0.9;
-  color: #4ba0c8;
 }

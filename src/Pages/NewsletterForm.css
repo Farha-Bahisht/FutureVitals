@@ -1,0 +1,125 @@
+/* src/Components/NewsletterForm.css */
+
+.newsletter {
+  display: flex;
+  justify-content: center;
+  padding: 3rem 1.5rem;
+}
+
+.newsletter-inner {
+  width: 100%;
+  max-width: 600px;
+  background: #fff7f0;
+  border-radius: 1.5rem;
+  padding: 2.5rem 2rem;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.06);
+}
+
+.newsletter-heading {
+  font-size: 1.75rem;
+  margin-bottom: 0.75rem;
+  color: #3a2412;
+}
+
+.newsletter-text {
+  font-size: 0.98rem;
+  line-height: 1.5;
+  margin-bottom: 1.75rem;
+  color: #4a3420;
+}
+
+.newsletter-form {
+  margin-bottom: 1rem;
+}
+
+.newsletter-label {
+  display: block;
+  font-size: 0.85rem;
+  font-weight: 500;
+  margin-bottom: 0.4rem;
+  color: #5a3e28;
+}
+
+.newsletter-input-row {
+  display: flex;
+  gap: 0.6rem;
+  flex-wrap: wrap;
+}
+
+.newsletter-input {
+  flex: 1 1 220px;
+  padding: 0.7rem 0.9rem;
+  border-radius: 999px;
+  border: 1px solid #e0c3a6;
+  font-size: 0.95rem;
+  outline: none;
+}
+
+.newsletter-input:focus {
+  border-color: #d17a3f;
+  box-shadow: 0 0 0 2px rgba(209, 122, 63, 0.2);
+}
+
+.newsletter-button {
+  flex: 0 0 auto;
+  padding: 0.7rem 1.3rem;
+  border-radius: 999px;
+  border: none;
+  cursor: pointer;
+  font-size: 0.95rem;
+  font-weight: 600;
+  background: #d17a3f;
+  color: #ffffff;
+  transition: transform 0.1s ease, box-shadow 0.1s ease, background 0.2s ease;
+}
+
+.newsletter-button:hover {
+  background: #b5632f;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.15);
+  transform: translateY(-1px);
+}
+
+.newsletter-button:active {
+  transform: translateY(0);
+  box-shadow: none;
+}
+
+.newsletter-message {
+  margin-top: 0.75rem;
+  font-size: 0.9rem;
+  color: #275c36;
+}
+
+.newsletter-footer {
+  margin-top: 0.75rem;
+  font-size: 0.88rem;
+  color: #5a3e28;
+}
+
+.newsletter-link {
+  color: #d17a3f;
+  font-weight: 600;
+  text-decoration: underline;
+}
+
+.newsletter-link:hover {
+  text-decoration: none;
+}
+
+/* Small screens */
+@media (max-width: 480px) {
+  .newsletter-inner {
+    padding: 2rem 1.5rem;
+  }
+
+  .newsletter-input-row {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .newsletter-button {
+    width: 100%;
+    text-align: center;
+    justify-content: center;
+  }
+}

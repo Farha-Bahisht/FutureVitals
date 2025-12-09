@@ -21,6 +21,7 @@ import AboutAdmin from "./Admin/AboutAdmin";
 import BlogAdmin from "./Admin/BlogAdmin";
 import BlogAdminList from "./Admin/BlogAdminList";
 import EditBlog from "./Admin/EditBlog";
+import GetInvolvedAdmin from './Admin/GetInvolvedAdmin'; 
 
 function App() {
   return (
@@ -57,7 +58,7 @@ function App() {
             <Route path="blogs" element={<BlogAdminList />} />
             <Route path="blogs/new" element={<BlogAdmin />} />
             <Route path="blogs/edit/:id" element={<EditBlog />} />
-            <Route path="getinvolved" element={<div>Edit Get Involved (coming soon)</div>} />
+            <Route path="/admin/getinvolved" element={<GetInvolvedAdmin />} />
           </Route>
         </Routes>
       </BrowserRouter>

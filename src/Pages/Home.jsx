@@ -6,7 +6,7 @@ import healthImg from "/Users/farhabahisht/FutureVitals/src/assets2/health.jpg";
 import mentalImg from "/Users/farhabahisht/FutureVitals/src/assets2/mental.png";
 import educationImg from "/Users/farhabahisht/FutureVitals/src/assets2/education.png";
 import WhereWeWork from "/Users/farhabahisht/FutureVitals/src/Components/WhereWeWork.jsx"; // ✅ make sure this path matches your project
-import NewsletterForm from "/Users/farhabahisht/FutureVitals/src/Components/NewsletterForm.jsx"; // ✅ adjust path
+
 
 // ✅ Example stats array (if not already imported)
 const stats = [
@@ -129,22 +129,23 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ✅ NEWSLETTER */}
+      {/* ✅ NEWSLETTER 
       <section className="page-section">
         <h2>Stay Updated</h2>
         <p>Sign up for our newsletter to receive updates and news.</p>
         <NewsletterForm />
       </section>
+      */}
 
       <section className="newsletter-section">
       <div className="newsletter-blob">
         <h2 className="newsletter-title">Read Our Newsletter!</h2>
         <p className="newsletter-text">
-          tay connected with FutureVitals by signing up for our newsletter. Be the first to hear about 
+          Stay connected with FutureVitals by signing up for our newsletter. Be the first to hear about 
           our latest projects, events, and programs.
             Don’t miss out—join our community today and stay informed!
         </p>
-        <a href="#" className="newsletter-btn">
+        <a href="https://docs.google.com/forms/d/e/1FAIpQLSf1uojvpb8uofP4a67JQaSmE1nb4xTqz-B-k7Oq0wCYpwtoFQ/viewform?usp=header" className="newsletter-btn">
           View Here!
         </a>
       </div>

@@ -20,7 +20,7 @@ const Navbar = () => {
         {/* Logo */}
         <Link to="/" className="logo">
           <img
-            src="/assets/logo.png"
+            src="assets/logof.png" 
             alt="Future Vitals"
             className="brand-logo"
           />

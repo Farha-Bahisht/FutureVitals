@@ -3,47 +3,64 @@ const express = require('express');
 const mongoose = require('mongoose');
 const cors = require('cors');
 const morgan = require('morgan');
+const path = require('path');
 
 const app = express();
 
-// middleware
+// =======================
+// 🌐 Middleware
+// =======================
 app.use(cors({ origin: ['http://localhost:3000'] }));
 app.use(express.json());
 app.use(morgan('dev'));
 
-// admin route
-const adminRoutes = require("./routes/admin"); // add this
-app.use(express.json()); // if you don't already have this, add it
-app.use("/api/admin", adminRoutes); // add this
+// 📁 Serve uploaded images (so you can load them on the frontend)
+app.use('/uploads', express.static(path.join(__dirname, 'uploads')));
 
-// admin about us
-const aboutRoutes = require("./routes/aboutus");
-app.use("/api/aboutus", aboutRoutes);
+// =======================
+// 🧠 Routes
+// =======================
 
-// newsletter route
+// Admin Routes
+const adminRoutes = require('./routes/admin');
+app.use('/api/admin', adminRoutes);
+
+// About Us Routes
+const aboutRoutes = require('./routes/aboutus');
+app.use('/api/aboutus', aboutRoutes);
+
+// Newsletter Routes
 const newsletterRoutes = require('./routes/newsletter');
 app.use('/api/newsletter', newsletterRoutes);
 
-// blog route
+// Blog Routes
 const blogRoutes = require('./routes/blog');
 app.use('/api/blogs', blogRoutes);
 
-// test route
+// Get Involved Routes
+const getInvolvedRoutes = require("./routes/getinvolved");
+app.use("/api/getinvolved", getInvolvedRoutes);
+
+
+// =======================
+// 🧪 Health Check
+// =======================
 app.get('/health', (req, res) => {
   res.json({ ok: true, message: 'API up' });
 });
 
-// env variables
+// =======================
+// 🛢️ Connect to MongoDB
+// =======================
 const PORT = process.env.PORT || 4000;
 const MONGODB_URI = process.env.MONGODB_URI;
 
-// connect to MongoDB
 mongoose.connect(MONGODB_URI)
   .then(() => {
-    console.log(' MongoDB connected');
-    app.listen(PORT, () => console.log(` Server running on http://localhost:${PORT}`));
+    console.log('✅ MongoDB connected');
+    app.listen(PORT, () => console.log(`🚀 Server running on http://localhost:${PORT}`));
   })
   .catch(err => {
-    console.error(' DB connection error:', err.message);
+    console.error('❌ DB connection error:', err.message);
     process.exit(1);
   });

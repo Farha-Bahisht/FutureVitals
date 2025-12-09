@@ -89,12 +89,15 @@
   cursor: pointer;
   transition: background 0.3s ease, transform 0.2s ease;
   white-space: nowrap;
+  display: inline-block;
+  margin-left: 1rem; /* ⬅️ pushes it to the right */
 }
 
 .donate:hover {
   background: #ffb6c1;
   transform: scale(1.05);
 }
+
 
 /* ---------------- RESPONSIVE ---------------- */
 @media (max-width: 768px) {
