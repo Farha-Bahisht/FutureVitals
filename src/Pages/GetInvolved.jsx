@@ -7,7 +7,7 @@ export default function GetInvolved() {
 
   useEffect(() => {
     axios
-      .get("http://localhost:4000/api/getinvolved")
+      .get("https://futurevitals1-1.onrender.com/api/getinvolved")
       .then((res) => setData(res.data))
       .catch((err) => console.error("Failed to load Get Involved:", err));
   }, []);

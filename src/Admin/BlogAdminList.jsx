@@ -9,7 +9,7 @@ export default function BlogAdminList() {
   // Fetch all blogs
   const fetchBlogs = async () => {
     try {
-      const res = await fetch("http://localhost:4000/api/blogs");
+      const res = await fetch("https://futurevitals1-1.onrender.com/api/blogs");
       const data = await res.json();
       setBlogs(data);
     } catch (err) {
@@ -27,7 +27,7 @@ export default function BlogAdminList() {
     if (!window.confirm("Are you sure you want to delete this blog?")) return;
 
     try {
-      const res = await fetch(`http://localhost:4000/api/blogs/${id}`, {
+      const res = await fetch(`https://futurevitals1-1.onrender.com/api/blogs/${id}`, {
         method: "DELETE",
       });
       const data = await res.json();
