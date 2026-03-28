@@ -17,7 +17,7 @@ export default function BlogAdmin() {
     if (image) formData.append("image", image);
 
     try {
-      const res = await fetch("http://localhost:4000/api/blogs", {
+      const res = await fetch("https://futurevitals1-1.onrender.com/api/blogs", {
         method: "POST",
         body: formData, // no headers for multipart
       });

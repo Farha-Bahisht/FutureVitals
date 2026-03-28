@@ -8,7 +8,7 @@ export default function GetInvolvedAdmin() {
   // 🧭 Load current data
   useEffect(() => {
     axios
-      .get("http://localhost:4000/api/getinvolved")
+      .get("https://futurevitals1-1.onrender.com/api/getinvolved")
       .then((res) => setData(res.data))
       .catch((err) => console.error("Failed to load:", err));
   }, []);
@@ -20,7 +20,7 @@ export default function GetInvolvedAdmin() {
 
     try {
       const res = await axios.post(
-        "http://localhost:4000/api/getinvolved/upload",
+        "https://futurevitals1-1.onrender.com/api/getinvolved/upload",
         formData,
         { headers: { "Content-Type": "multipart/form-data" } }
       );
@@ -77,7 +77,7 @@ export default function GetInvolvedAdmin() {
 
   const handleSave = async () => {
     try {
-      await axios.put("http://localhost:4000/api/getinvolved", data);
+      await axios.put("https://futurevitals1-1.onrender.com/api/getinvolved", data);
       alert("Get Involved page updated!");
     } catch (err) {
       console.error(err);

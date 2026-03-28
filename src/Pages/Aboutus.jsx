@@ -6,7 +6,7 @@ export default function AboutUs() {
   const [about, setAbout] = useState(null);
 
   useEffect(() => {
-    axios.get("http://localhost:4000/api/aboutus").then((res) => {
+    axios.get("https://futurevitals1-1.onrender.com/api/aboutus").then((res) => {
       setAbout(res.data);
     });
   }, []);

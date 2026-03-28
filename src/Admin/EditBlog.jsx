@@ -15,7 +15,7 @@ export default function EditBlog() {
   useEffect(() => {
     const fetchBlog = async () => {
       try {
-        const res = await fetch(`http://localhost:4000/api/blogs/${id}`);
+        const res = await fetch(`https://futurevitals1-1.onrender.com/api/blogs/${id}`);
         const data = await res.json();
 
         if (res.ok) {
@@ -41,7 +41,7 @@ export default function EditBlog() {
     if (image) formData.append("image", image);
 
     try {
-      const res = await fetch(`http://localhost:4000/api/blogs/${id}`, {
+      const res = await fetch(`https://futurevitals1-1.onrender.com/api/blogs/${id}`, {
         method: "PUT",
         body: formData,
       });

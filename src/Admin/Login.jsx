@@ -11,7 +11,7 @@ export default function Login() {
   const handleLogin = async (e) => {
     e.preventDefault();
     try {
-      const res = await axios.post("http://localhost:4000/api/admin/login", {
+      const res = await axios.post("https://futurevitals1-1.onrender.com/api/admin/login", {
         username,
         password,
       });

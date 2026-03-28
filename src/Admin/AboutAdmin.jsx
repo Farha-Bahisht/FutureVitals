@@ -6,7 +6,7 @@ export default function AboutAdmin() {
   const [about, setAbout] = useState(null);
 
   useEffect(() => {
-    axios.get("http://localhost:4000/api/aboutus").then((res) => {
+    axios.get("https://futurevitals1-1.onrender.com/api/aboutus").then((res) => {
       setAbout(res.data);
     });
   }, []);
@@ -20,7 +20,7 @@ export default function AboutAdmin() {
 
     try {
       const res = await axios.post(
-        "http://localhost:4000/api/aboutus/upload",
+        "https://futurevitals1-1.onrender.com/api/aboutus/upload",
         formData,
         {
           headers: { "Content-Type": "multipart/form-data" },
@@ -76,7 +76,7 @@ export default function AboutAdmin() {
 
   const handleSave = async () => {
     try {
-      await axios.put("http://localhost:4000/api/aboutus", about);
+      await axios.put("https://futurevitals1-1.onrender.com/api/aboutus", about);
       alert("About page updated!");
     } catch (err) {
       console.error(err);
