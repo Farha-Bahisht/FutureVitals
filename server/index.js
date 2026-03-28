@@ -39,7 +39,7 @@ const blogRoutes = require('./routes/blog');
 app.use('/api/blogs', blogRoutes);
 
 // Get Involved Routes
-const getInvolvedRoutes = require("./routes/getinvolved");
+const getInvolvedRoutes = require("./routes/GetInvolved");
 app.use("/api/getinvolved", getInvolvedRoutes);
 
 
